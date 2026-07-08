@@ -2160,9 +2160,13 @@ section {
         gap: 40px;
     }
     
-    .majors-pillars-grid,
-    .team-grid {
+    .majors-pillars-grid {
         grid-template-columns: 1fr;
+        gap: 24px;
+    }
+    
+    .team-grid {
+        grid-template-columns: repeat(2, 1fr);
         gap: 24px;
     }
     
@@ -2270,11 +2274,19 @@ section {
     }
     
     .map-target-buttons {
-        grid-template-columns: repeat(2, 1fr);
+        display: flex;
+        overflow-x: auto;
+        flex-wrap: nowrap;
+        -webkit-overflow-scrolling: touch;
     }
     
-    .map-target-btn:nth-child(2) {
-        border-right: none;
+    .map-target-btn {
+        flex: 0 0 auto;
+        padding: 12px 24px;
+    }
+    
+    .team-grid {
+        grid-template-columns: 1fr;
     }
     
     .pane-title {
@@ -2328,6 +2340,25 @@ section {
     }
     
     .footer-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Mobile Portrait (Under 480px) */
+@media (max-width: 480px) {
+    section {
+        padding: 40px 0;
+    }
+    
+    .hero-title {
+        font-size: 1.8rem;
+    }
+    
+    .logo-container img {
+        max-width: 65vw !important;
+    }
+    
+    .investment-tiles-grid {
         grid-template-columns: 1fr;
     }
 }
