@@ -2253,24 +2253,79 @@ section {
         padding: 60px 0;
     }
     
+    /* iOS doesn't support background-attachment: fixed */
+    .section-hero {
+        background-attachment: scroll !important;
+    }
+    
+    /* Scrolled header mobile fix */
+    .main-header.scrolled .nav-menu {
+        background-color: #FFFFFF;
+    }
+    
+    .container {
+        padding: 0 16px;
+    }
+    
     .section-title {
+        font-size: 1.8rem;
+    }
+    
+    .section-desc {
+        font-size: 0.95rem;
+    }
+    
+    .section-header {
+        margin-bottom: 40px;
+    }
+    
+    /* Hero Section Mobile */
+    .hero-title {
         font-size: 2rem;
     }
     
-    .hero-title {
-        font-size: 2.2rem;
+    .hero-subtitle {
+        font-size: 1rem;
+        margin-bottom: 28px;
     }
     
+    .hero-actions {
+        flex-direction: column;
+        gap: 12px;
+    }
+    
+    .hero-actions .btn {
+        width: 100%;
+        text-align: center;
+        padding: 14px 20px;
+    }
+    
+    .hero-map-card {
+        max-width: 100%;
+    }
+    
+    .hero-video-preview {
+        height: 220px !important;
+    }
+    
+    .badge-row {
+        gap: 8px;
+    }
+    
+    .ticker-badge, .geo-badge {
+        font-size: 0.65rem;
+        padding: 3px 10px;
+    }
+    
+    /* Grid-2 (De-Risked Foundation) */
     .grid-2 {
         grid-template-columns: 1fr;
         gap: 32px;
     }
     
-    /* Mobile navigation inherited from 1024px breakpoint */
-    
-    /* Interactive map adjustments */
+    /* District map buttons - horizontal scroll strip */
     .map-container-inner {
-        min-height: 280px;
+        min-height: 220px;
     }
     
     .map-target-buttons {
@@ -2278,25 +2333,81 @@ section {
         overflow-x: auto;
         flex-wrap: nowrap;
         -webkit-overflow-scrolling: touch;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+    
+    .map-target-buttons::-webkit-scrollbar {
+        display: none;
     }
     
     .map-target-btn {
         flex: 0 0 auto;
-        padding: 12px 24px;
-    }
-    
-    .team-grid {
-        grid-template-columns: 1fr;
+        padding: 12px 20px;
+        font-size: 0.7rem;
+        white-space: nowrap;
     }
     
     .pane-title {
-        font-size: 1.5rem;
+        font-size: 1.4rem;
     }
     
+    .pane-description {
+        font-size: 0.9rem;
+    }
+    
+    /* District Metrics */
     .district-metrics-grid {
         grid-template-columns: 1fr;
     }
     
+    /* De-Risked Foundation Highlights */
+    .cta-row {
+        flex-direction: column;
+        gap: 16px;
+        align-items: flex-start;
+    }
+    
+    /* Elephant / Magmatic Engine section */
+    .elephant-graphics-pane {
+        height: 350px;
+    }
+    
+    .narrative-heading {
+        font-size: 1.5rem;
+    }
+    
+    /* Science Grid */
+    .science-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .science-card:nth-child(1),
+    .science-card:nth-child(2),
+    .science-card:nth-child(3),
+    .science-card:nth-child(4),
+    .science-card:nth-child(5) {
+        grid-column: span 1;
+    }
+    
+    /* Upside layout */
+    .upside-layout {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+    
+    /* Catalyst Filters */
+    .catalyst-filters {
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+    
+    .filter-btn {
+        font-size: 0.7rem;
+        padding: 6px 14px;
+    }
+    
+    /* Timeline */
     .timeline-progress-line {
         left: 20px;
     }
@@ -2330,17 +2441,76 @@ section {
         display: none;
     }
     
-    .science-grid,
+    /* Investment Tiles */
     .investment-tiles-grid {
         grid-template-columns: 1fr;
     }
     
-    .cta-title {
-        font-size: 2rem;
+    .investment-tile:nth-child(1),
+    .investment-tile:nth-child(6) {
+        grid-column: span 1;
     }
     
+    /* Majors & Team */
+    .majors-pillars-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+    
+    .team-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    /* CTA Section */
+    .cta-title {
+        font-size: 1.8rem !important;
+        line-height: 1.3 !important;
+    }
+    
+    .cta-title br {
+        display: none;
+    }
+    
+    .cta-buttons {
+        flex-direction: column;
+        gap: 12px;
+    }
+    
+    .cta-buttons .btn {
+        width: 100%;
+    }
+    
+    .cta-listings {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+    
+    .cta-listings .divider {
+        display: none;
+    }
+    
+    /* Footer */
     .footer-grid {
         grid-template-columns: 1fr;
+    }
+    
+    .subscribe-form {
+        flex-direction: column;
+    }
+    
+    .subscribe-form button {
+        width: 100%;
+    }
+    
+    .copyright-row {
+        flex-direction: column;
+        gap: 16px;
+        text-align: center;
+    }
+    
+    .legal-links {
+        justify-content: center;
     }
 }
 
@@ -2350,15 +2520,79 @@ section {
         padding: 40px 0;
     }
     
+    .container {
+        padding: 0 12px;
+    }
+    
+    .section-title {
+        font-size: 1.5rem;
+    }
+    
     .hero-title {
-        font-size: 1.8rem;
+        font-size: 1.6rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 0.9rem;
     }
     
     .logo-container img {
-        max-width: 65vw !important;
+        max-width: 60vw !important;
     }
     
-    .investment-tiles-grid {
-        grid-template-columns: 1fr;
+    .hero-video-preview {
+        height: 180px !important;
+    }
+    
+    .card-title-sm {
+        font-size: 0.95rem;
+    }
+    
+    .card-footer-metrics {
+        flex-direction: column;
+        gap: 8px;
+    }
+    
+    .metric-num {
+        font-size: 2rem;
+    }
+    
+    .elephant-graphics-pane {
+        height: 280px;
+    }
+    
+    .btn {
+        font-size: 0.8rem;
+        padding: 12px 20px;
+    }
+    
+    .btn-lg {
+        padding: 14px 24px;
+        font-size: 0.85rem;
+    }
+    
+    .cta-subtitle {
+        font-size: 1rem !important;
+    }
+    
+    .narrative-heading {
+        font-size: 1.3rem;
+    }
+    
+    .narrative-body {
+        font-size: 0.9rem;
+    }
+    
+    .pillar-card h3 {
+        font-size: 1.2rem;
+    }
+    
+    .pillar-card p {
+        font-size: 0.9rem;
     }
 }
+
+
+
+    
+
