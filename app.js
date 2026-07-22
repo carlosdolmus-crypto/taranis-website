@@ -59,11 +59,16 @@ document.addEventListener('DOMContentLoaded', () => {
             targetButtons.forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
             
-            // Toggle active info pane
+            // Toggle active info pane with ambient transition
             targetPanes.forEach(pane => {
                 pane.classList.remove('active');
                 if (pane.getAttribute('id') === targetId) {
                     pane.classList.add('active');
+                    // Ambient glow pulse on transition
+                    pane.style.boxShadow = 'inset 0 0 30px rgba(200, 154, 74, 0.06)';
+                    setTimeout(() => {
+                        pane.style.boxShadow = '';
+                    }, 600);
                 }
             });
         });
